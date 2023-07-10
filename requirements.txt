@@ -1,0 +1,9 @@
+tensorflow
+flask
+twilio
+pillow
+scikit-image
+google-search
+requests
+nltk
+numpy

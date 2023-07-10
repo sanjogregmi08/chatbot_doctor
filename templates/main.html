@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatbot</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#chat-form").submit(function(e) {
+				e.preventDefault();
+				var message = $("#user-input").val();
+				$.ajax({
+					url: "/sms",
+					method: "POST",
+					data: { Body: message },
+					success: function(response) {
+						displayMessage(message);
+						displayMessage(response);
+					}
+				});
+				$("#user-input").val("");
+			});
+
+			function displayMessage(message) {
+				var chatBox = $("#chat-box");
+				chatBox.append("<p><strong>You:</strong> " + message + "</p>");
+			}
+		});
+	</script>
+</head>
+<body>
+	<h1>Chatbot</h1>
+	<div id="chat-box">
+		{% for message in past_messages %}
+			<p><strong>Bot:</strong> {{ message }}</p>
+		{% endfor %}
+	</div>
+	<form id="chat-form">
+		<input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" />
+		<button type="submit">Send</button>
+	</form>
+</body>
+</html>

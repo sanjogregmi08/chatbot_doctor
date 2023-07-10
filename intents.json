@@ -1,0 +1,294 @@
+{
+  "intents": [
+    {
+      "tag": "greet",
+      "patterns": [ "hello!", "hii", "hey", "hola", "aloha", "hi", "whats up", "is anyone there?", "hello", "hiie", "hiieee", "heyys", "hello there", "hie there", "hey there" ,"hiiii"],
+      "responses": [ "Hello! 🙋‍♀️", "Hey 🙋‍♀️", "🙋‍♀️ How are you?", "Hi there, How may I help?", "Hello there, How may I help you?","Hi, hope your doing fine 😀"],
+      "context_set": [ "" ]
+    },
+    {
+    	"tag": "greet2",
+    	"patterns":["im good how about you", "i am fine how about you", "im doing good, and you", "im awesome how are you", "im doing great today tell about yourself", "im fine, and u","im good and you", "im doing good n u", "im awesome, how about you", "im doing great today, how are you", "i am fine, and you fiana","im good, and how are you doing", "im fine and how are you doing", "im doing good, how are you", "im awesome, and you fiana", "im doing great today how about you", "im good tell me about yourself","im good u say", "im doing good u say", "im awesome you say", "im doing great today you say", "im fine you say"],
+    	"responses":[ "nice 😀\nI'm doing great", "cool 😎\nI'm good", "awesome!!\nI am fine", "fantastic 😎👍\nI'm doing awesome as always 😇", "glad!,\nI'm good", "great!\nI am fine 😇" ],
+    	"context_set": [ "" ]
+    },
+    {
+      "tag": "happy",
+      "patterns": [ "im good", "im doing good", "im awesome", "im doing great today", "im good"],
+      "responses": [ "nice 😀", "cool 😎", "awesome!!", "fantastic 😎👍", "glad!", "great!" ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "normal",
+      "patterns": [ "how are you", "how was your day", "how about you", "and you", "hope you are doing good", "hope you are doing fine" ],
+      "responses": [ "I'm doing good", "I'm good", "I'm fine 😁", "Awesome as always 😇"],
+      "context_set": [ "" ]
+
+    },
+    {
+      "tag": "sad",
+      "patterns": [ "bad day", "not that great", "was ok ok","okay cool", "ok cool", "its fine", "im fine", "nice to know that", "glad to know"],
+      "responses": [ "😇" ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "name",
+      "patterns": [ "what is your name?", "what should i call you?", "your name?", "What is your name?", "what are you?", "who are you?", "your name pls?","what is your name bro","what is your name brother"],
+      "responses": [ "A robot who fails CAPTCHA every time,:P kidding, You can call me Fiana!", "My name is Fiana", "I am Fiana","Hi, I'm  Fiana", "I'm Fiana ", "Call me Fiana" ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "end",
+      "patterns": [ "Bye", "tata", "close", "Okay Goodbye", "Talk to you soon", "goodbye", "I am Leaving", "See you later", "cya", "c yaa", "c yeah", "Thanks","break", "exit", "quit", "close", "bye"],
+      "responses": [ "Goodbye! 😇", "See you soon!", "Cya", "Talk to you later", "🤠 Sad you are leaving!, I mean ☹️ sad you are leaving", "Thankyou for your precious time"],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "upload",
+      "patterns": [ "How can i upload image", "How can i share image", "Is it safe", "How can i trust you", "how can i upload photo", "how can i share photo", "how do you want photo", "what type of photo", "what type of image", "skin image only" ],
+      "responses": ["Take a close focused clear image of the affected area and upload the photo by pressing on the (share logo) button and once done tell me to evaluate then I’ll start evaluating,\n In Backend, the image will be converted to binaries, fed directly to the neural network for evaluation! and respecting your privacy It will not be saved anywhere to preserve memory and speed for your better experience with me!"],
+      "context_set": [ "" ]
+    },
+    {
+
+      "tag": "detect",
+      "patterns": [ "is it benign or malignant", "check this", "examine this", "what type of tumor is it", "what is it", "what kind of tumor is it", "see this", "please help", "kindly help", "check this out","i give you permission", "youe can do it","please do","find it out","test this","test it" ],
+      "responses": [ "<DETECT>" ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "menu",
+      "patterns": ["who created you", "who are you", "define yourself", "explain your self", "explain ur self", "Tell me about yourself"],
+      "responses": ["I am Fiana 🧚‍♀️, made by Deepak Avudiappan on 27-2-2021. I predict whether a tumor is benign or malignant using the power of Artificial Neural Network of 85.15% accuracy. Note that I'm not accurate all the time I have a 14.85% chance of making mistake!, share a photo of the affected area with me I’ll check"],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "tumor",
+      "patterns": [ "What is the difference between benign and malignant", "what is tumor", "what are the types of tumor", "is tumor safe" ],
+      "responses": [ "A tumor is an abnormal growth of body tissue. Tumors can be cancerous (malignant) or noncancerous (benign)." ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "wish",
+      "patterns": [ "okay Thankyou", "Thankyou", "thanks", "Wow Thankyou", "Wow thanks", "Thank you", "That's helpful", "Awesome thanks", "Thanks for helping me"],
+      "responses": [ "My pleasure", "Welcome", "Happy to help!"],
+      "context_set": [ "" ]
+
+    },
+    {
+	  "tag":"norm",
+	  "patterns":[ "cool", "great","ok","okay","well","Alright", "Wow nice", "wow cool", "nice", "nice to know that","wow","Cool" , "cooooll", "cool", "okay","Ok","OK","OKAY","Okay","okay cool", "ok cool", "cool"],
+	  "responses":[ "😇" ],
+	  "context_set":[ "" ]
+    },
+    {
+      "tag": "username",
+      "patterns": ["my name is","call me", "I'm deepak", "I am deepa", "I am radhika", "I am john", "my name is johnny", "my name is joel", "my name is karan", "my name is stephan", "you can call me joe", "its me kaber", "im emma", "im William", "my name is noah", "i am peter", "call me michael", "i am emily", "my name is isaac", "i am luke", "its me samuel", "you can call me sophie", "its me  ", "you can call me"],
+      "responses": [ "Nice to meet you!" ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "options",
+      "patterns": [ "How can you help me?", "What can you do?", "What help you provide?", "How can you be helpful?", "What support do you offered","What can you do?", "What is your purpose?", "your role?", "what can you serve me?", "your purpose", "What do you know?", "what help?", "What are you about?","How can you help me?", "What can you do?", "What help you provide?", "How can you be helpful?", "What support do you offered","What do you know?","what help?","What are you about?"],
+      "responses": [ "I can provide you with information about symptoms and treatment options for various medical conditions. If you tell me about your specific symptoms or the condition you're concerned about, I can offer guidance on possible causes and potential treatment approaches. However, please note that I am an AI language model and not a substitute for professional medical advice. It's always important to consult with a qualified healthcare professional for an accurate diagnosis and personalized treatment plan." ],
+      "context_set": [ "" ]
+    },
+    {
+      "tag": "actinic_keratoses",
+      "patterns": [
+      "What are the symptoms of Actinic keratoses?",
+      "Can you tell me about the symptoms of Actinic keratoses?",
+      "What are the signs of Actinic keratoses?",
+      "I'm experiencing skin issues, could it be Actinic keratoses?"
+      ],
+      "responses": [
+      "Actinic keratoses are rough, scaly patches or lesions that develop on the skin due to sun exposure. Some common symptoms include:\n- Rough, dry, or crusty patches on the skin\n- Pink, red, or brownish coloration\n- Itching or burning sensation in the affected area\n- The patches may be flat or slightly raised\nIf you suspect you may have actinic keratoses or any other skin condition, it's always best to consult a dermatologist for a proper diagnosis and appropriate treatment."
+      ],
+      "context_set": [""]
+      },
+      {
+      "tag": "basal_cell_carcinoma",
+      "patterns": [
+      "What are the symptoms of Basal cell carcinoma?",
+      "Can you tell me about the symptoms of Basal cell carcinoma?",
+      "What are the signs of Basal cell carcinoma?",
+      "I'm experiencing skin issues, could it be Basal cell carcinoma?"
+      ],
+      "responses": [
+      "Basal cell carcinoma is a type of skin cancer that usually develops on sun-exposed areas of the skin. Some common symptoms include:\n- A waxy, pearly bump on the skin\n- A flat, flesh-colored or brown scar-like lesion\n- Pink growths with raised edges\n- Ulcerated or bleeding lesions\n- The skin may appear shiny or tight\nIf you suspect you may have basal cell carcinoma or any other skin condition, it's crucial to consult a dermatologist for a proper diagnosis and appropriate treatment."
+      ],
+      "context_set": [""]
+      },
+      {
+      "tag": "dermatofibroma",
+      "patterns": [
+      "What are the symptoms of Dermatofibroma?",
+      "Can you tell me about the symptoms of Dermatofibroma?",
+      "What are the signs of Dermatofibroma?",
+      "I'm experiencing skin issues, could it be Dermatofibroma?"
+      ],
+      "responses": [
+      "Dermatofibroma is a benign skin growth that often appears on the legs. Some common symptoms include:\n- A small, firm, raised bump on the skin\n- The bump may be pink, brown, or purple\n- Itching or tenderness in the affected area\n- Dimpling or puckering of the skin when pinched\n- The bump may feel like a hard knot under the skin\nIf you suspect you may have dermatofibroma or any other skin condition, it's advisable to consult a dermatologist for a proper diagnosis and appropriate treatment."
+      ],
+      "context_set": [""]
+      },
+      {
+        "tag": "melanoma",
+        "patterns": [
+          "What are the symptoms of Melanoma?",
+          "Can you tell me about the symptoms of Melanoma?",
+          "What are the signs of Melanoma?",
+          "I'm experiencing skin issues, could it be Melanoma?"
+        ],
+        "responses": [
+          "Melanoma is a type of skin cancer that develops from melanocytes, the pigment-producing cells in the skin. Some common symptoms include:\n- A new mole or a change in an existing mole\n- Asymmetrical shape or irregular borders of a mole\n- Varied colors within a mole, such as shades of brown, black, or even red, white, or blue\n- Increasing size or thickness of a mole\n- Itching, tenderness, or pain in a mole\n- The mole may bleed or ooze\nIf you suspect you may have melanoma or any other skin condition, it's vital to consult a dermatologist for a proper diagnosis and appropriate treatment."
+        ],
+        "context_set": [""]
+      },
+      {
+        "tag": "melanocytic_nevi",
+        "patterns": [
+          "What are the symptoms of Melanocytic nevi?",
+          "Can you tell me about the symptoms of Melanocytic nevi?",
+          "What are the signs of Melanocytic nevi?",
+          "I'm experiencing skin issues, could it be Melanocytic nevi?"
+        ],
+        "responses": [
+          "Melanocytic nevi, also known as moles, are benign skin growths that can vary in appearance. Some common symptoms include:\n- Small, round, or oval-shaped spots on the skin\n- Brown, black, or flesh-colored moles\n- Moles can be flat or raised\n- The size of moles can range from small to large\n- Most moles are harmless, but changes in size, shape, or color should be monitored\nIf you suspect you may have melanocytic nevi or any other skin condition, it's recommended to consult a dermatologist for a proper diagnosis and appropriate treatment."
+        ],
+        "context_set": [""]
+      },
+      {
+        "tag": "vascular_lesions",
+        "patterns": [
+          "What are the symptoms of Vascular lesions?",
+          "Can you tell me about the symptoms of Vascular lesions?",
+          "What are the signs of Vascular lesions?",
+          "I'm experiencing skin issues, could it be Vascular lesions?"
+        ],
+        "responses": [
+          "Vascular lesions are abnormal growths or discolorations of blood vessels in the skin. Some common symptoms include:\n- Red or purple birthmarks\n- Spider veins or broken blood vessels (telangiectasias)\n- Port-wine stains (flat, pink, red, or purple birthmarks)\n- Hemangiomas (raised, red birthmarks)\n- Strawberry hemangiomas (raised, bright red birthmarks)\nIf you suspect you may have vascular lesions or any other skin condition, it's advisable to consult a dermatologist for a proper diagnosis and appropriate treatment."
+        ],
+        "context_set": [""]
+      },
+  {
+    "tag": "actinic_keratoses_treatment",
+    "patterns": [
+        "What are the treatment options for Actinic keratoses?",
+        "Can you tell me about the treatments available for Actinic keratoses?",
+        "How are Actinic keratoses usually treated?",
+        "What are some effective treatments for Actinic keratoses?"
+    ],
+    "responses": [
+        "Actinic keratoses can be treated using various methods. Some common treatment options include:",
+        "- Topical medications: Prescription creams or gels containing ingredients like 5-fluorouracil, imiquimod, diclofenac, or ingenol mebutate can be applied to the affected area to help eliminate the lesions.",
+        "- Cryotherapy: Liquid nitrogen is used to freeze and destroy the abnormal skin cells.",
+        "- Curettage and electrodessication: The lesion is scraped off with a curette and the base is cauterized with an electric current.",
+        "- Photodynamic therapy: A photosensitizing agent is applied to the skin, followed by exposure to a specific light source to destroy the abnormal cells.",
+        "- Laser therapy: Intense laser light is used to remove the lesions.",
+        "It's important to consult a dermatologist to determine the most suitable treatment option for your specific case of actinic keratoses."
+    ],
+    "context_set": [ "" ]
+},
+
+{
+  "tag": "basal_cell_carcinoma_treatment",
+  "patterns": [
+  "What are the treatment options for Basal cell carcinoma?",
+  "Can you tell me about the treatments available for Basal cell carcinoma?",
+  "How is Basal cell carcinoma usually treated?",
+  "What are some effective treatments for Basal cell carcinoma?"
+  ],
+  "responses": [
+  "Basal cell carcinoma can be treated using various methods. The choice of treatment depends on the size, location, and subtype of the carcinoma. Some common treatment options include:\n- Surgical excision: The tumor is surgically removed along with a margin of healthy tissue.\n- Mohs surgery: Layer-by-layer removal of the tumor, with microscopic examination of each layer to ensure complete removal while preserving healthy tissue.\n- Electrodessication and curettage: The tumor is scraped off with a curette and the base is cauterized with an electric current.\n- Radiation therapy: High-energy X-rays or other radiation sources are used to destroy cancer cells.\n- Topical medications: Certain creams or gels may be prescribed for superficial basal cell carcinoma, such as imiquimod or 5-fluorouracil.\n- Photodynamic therapy: A photosensitizing agent is applied to the skin, followed by exposure to a specific light source to destroy the cancer cells.\nThe choice of treatment will be determined by a dermatologist based on the specific characteristics of your basal cell carcinoma."
+  ],
+  "context_set": [ "" ]
+  },
+  {
+  "tag": "benign_keratosis_treatment",
+  "patterns": [
+  "What are the treatment options for Benign keratosis-like lesions?",
+  "Can you tell me about the treatments available for Benign keratosis?",
+  "How are Benign keratosis-like lesions usually treated?",
+  "What are some effective treatments for Benign keratosis?"
+  ],
+  "responses": [
+  "Benign keratosis-like lesions, also known as seborrheic keratoses, can be managed through various treatment options. Some common treatments include:\n- Cryotherapy: Liquid nitrogen is used to freeze the growths, causing them to fall off.\n- Curettage: The lesions are scraped off using a curette.\n- Electrosurgery: The growths are burned off using an electric current.\n- Laser therapy: Intense laser light is used to remove the lesions.\n- Topical medications: Some topical creams or lotions may be prescribed to help lighten or reduce the appearance of the lesions.\nIt's important to consult a dermatologist to determine the most appropriate treatment option for your specific case of benign keratosis-like lesions."
+  ],
+  "context_set": [ "" ]
+  },
+  {
+  "tag": "dermatofibroma_treatment",
+  "patterns": [
+  "What are the treatment options for Dermatofibroma?",
+  "Can you tell me about the treatments available for Dermatofibroma?",
+  "How is Dermatofibroma usually treated?",
+  "What are some effective treatments for Dermatofibroma?"
+  ],
+  "responses": [
+  "Dermatofibromas generally do not require treatment unless they cause discomfort or cosmetic concerns. If treatment is desired, options may include:\n- Excision: The dermatofibroma is surgically removed, typically under local anesthesia.\n- Cryotherapy: Freezing the dermatofibroma with liquid nitrogen to destroy the tissue.\n- Laser therapy: Using laser treatment to lighten the color or flatten the dermatofibroma.\nIt's recommended to consult a dermatologist for an evaluation and to discuss the best course of action based on your specific situation."
+  ],
+  "context_set": [ "" ]
+  },
+  {
+    "tag": "melanoma_treatment",
+    "patterns": [
+    "What are the treatment options for Melanoma?",
+    "Can you tell me about the treatments available for Melanoma?",
+    "How is Melanoma usually treated?",
+    "What are some effective treatments for Melanoma?"
+    ],
+    "responses": [
+    "Treatment for melanoma depends on the stage and characteristics of the cancer. Some common treatment options include:\n- Surgery: The primary treatment for melanoma is surgical removal of the tumor and nearby lymph nodes if necessary. This may involve wide excision, lymph node biopsy, or sentinel lymph node biopsy.\n- Immunotherapy: Drugs that stimulate the immune system, such as checkpoint inhibitors (e.g., pembrolizumab, nivolumab) or targeted therapy (e.g., vemurafenib, dabrafenib), can be used for advanced or metastatic melanoma.\n- Radiation therapy: High-energy X-rays or other radiation sources can be used to destroy cancer cells or relieve symptoms in advanced cases.\n- Chemotherapy: In some cases, chemotherapy drugs may be used to treat advanced melanoma, particularly if it has spread to other organs.\n- Targeted therapy: Drugs that target specific genetic mutations in melanoma cells, such as BRAF inhibitors (e.g., vemurafenib, dabrafenib) or MEK inhibitors (e.g., trametinib, cobimetinib), may be prescribed for certain cases.\nThe treatment plan for melanoma will be personalized based on the individual's condition and determined by a multidisciplinary team of healthcare professionals."
+    ],
+    "context_set": [ "" ]
+    },
+    
+    {
+    "tag": "melanocytic_nevi_treatment",
+    "patterns": [
+    "What are the treatment options for Melanocytic nevi?",
+    "Can you tell me about the treatments available for Melanocytic nevi?",
+    "How are Melanocytic nevi usually treated?",
+    "What are some effective treatments for Melanocytic nevi?"
+    ],
+    "responses": [
+    "Melanocytic nevi, commonly known as moles, usually do not require treatment unless they show signs of changes or abnormalities. If treatment is necessary for cosmetic or medical reasons, options may include:\n- Excision: The mole is surgically removed along with a margin of normal skin. This is typically done under local anesthesia.\n- Shave excision: The mole is shaved off at the skin level using a surgical blade.\n- Laser treatment: Certain types of moles can be lightened or removed using laser therapy.\nIt's important to have any suspicious or changing moles evaluated by a dermatologist to rule out any potential skin cancer or other concerns."
+    ],
+    "context_set": [ "" ]
+    },
+    
+    {
+    "tag": "vascular_lesions_treatment",
+    "patterns": [
+    "What are the treatment options for Vascular lesions?",
+    "Can you tell me about the treatments available for Vascular lesions?",
+    "How are Vascular lesions usually treated?",
+    "What are some effective treatments for Vascular lesions?"
+    ],
+    "responses": [
+    "Treatment options for vascular lesions depend on the specific type and characteristics of the lesion. Some common treatment methods include:\n- Laser therapy: Laser treatment can be used to target and reduce the appearance of vascular lesions, such as port-wine stains or spider veins.\n- Sclerotherapy: A solution is injected into the affected blood vessels to shrink and close them off.\n- Electrosurgery: Electric current is used to destroy or remove vascular lesions.\n- Surgical excision: In some cases, surgical removal may be necessary for larger or more complex vascular lesions.\nThe most suitable treatment option will be determined by a dermatologist or vascular specialist based on the specific characteristics of the vascular lesion."
+    ],
+    "context_set": [ "" ]
+    },
+
+{
+    "tag": "how to use, how to detect disease",
+    "patterns": [
+        "How to detect disease",
+        "Can you tell me how to detect skin disease?",
+        "What are the steps to detect a disease?",
+        "How can I use the disease detection feature?",
+        "Is there a specific process to follow for disease detection?",
+        "What should I do if I suspect I have a disease?"
+    ],
+    "responses": [
+        "To detect a disease using our application, follow these steps:\n1. Open the camera section in the app.\n2. Select the camera option to either click a photo or upload an existing image.\n3. Wait for a few seconds while our AI analyzes the image.\n4. After analyzing, you will see highlights indicating potential areas of concern.\n5. If you click on the highlights, more details about the detected disease will appear.\n6. You can also save your data and review it at any time for future reference.\nIf you suspect you have a disease, it's important to consult a healthcare professional for a proper diagnosis and treatment."
+    ],
+    "context_set": [ "" ]
+}
+
+
+  ]
+
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Web Page</title>
+    <style>
+        #chat-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        #chat-log {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #send-btn {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #voice-btn {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #speak-btn {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h1>Chatbot Web Page</h1>
+
+        <div id="chat-log"></div>
+
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+            <button id="voice-btn">Voice</button>
+            <button id="speak-btn">Speak</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value.trim();
+            if (userInput !== "") {
+                displayMessage("You: " + userInput);
+
+                fetch("/api/send-message", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ message: userInput })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    displayMessage("Bot: " + data.response);
+                })
+                .catch(error => {
+                    console.log("Error:", error);
+                });
+
+                document.getElementById("user-input").value = "";
+            }
+        }
+        
+        function sendVoiceMessage() {
+            displayMessage("Listening...");
+            
+            fetch("/api/send-voice-message", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayMessage("Bot: " + data.response);
+                speak(data.response);
+            })
+            .catch(error => {
+                console.log("Error:", error);
+            });
+        }
+
+        function speak(message) {
+            fetch("/api/speak", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log("Text spoken successfully");
+                } else {
+                    console.log("Failed to speak text");
+                }
+            })
+            .catch(error => {
+                console.log("Error:", error);
+            });
+        }
+
+        function displayMessage(message) {
+            var chatLog = document.getElementById("chat-log");
+            var messageElement = document.createElement("div");
+            messageElement.innerText = message;
+            chatLog.appendChild(messageElement);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        document.getElementById("send-btn").addEventListener("click", function() {
+            sendMessage();
+        });
+
+        document.getElementById("voice-btn").addEventListener("click", function() {
+            sendVoiceMessage();
+        });
+        
+        document.getElementById("speak-btn").addEventListener("click", function() {
+            var lastBotResponse = document.getElementById("chat-log").lastChild.innerText;
+            speak(lastBotResponse.substr(5)); // Exclude "Bot: " from the text
+        });
+
+        document.getElementById("user-input").addEventListener("keypress", function(event) {
+            if (event.keyCode === 13) {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
